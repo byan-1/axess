@@ -42,7 +42,7 @@ bootstrap-dev:
 	scripts/bootstrap-dev.sh
 
 .PHONY: install
-install:
+install: bootstrap-dev
 	$(PIP_COMMAND) install -r requirements/requirements.txt
 	$(PIP_COMMAND) install -r requirements/requirements-dev.txt
 
