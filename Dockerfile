@@ -18,6 +18,7 @@ RUN chmod +x scripts/bootstrap.sh && \
     pip install -r /code/requirements/requirements.txt && \
     if [ $DEV = "true" ]; \
     then \
+        echo "Installing dev requirements" && \
         pip install -r /code/requirements/requirements-dev.txt; \
     fi && \
     rm -rf /code/requirements && \

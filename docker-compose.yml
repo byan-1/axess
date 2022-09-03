@@ -11,15 +11,13 @@ services:
     volumes:
       - ./:/code
     environment:
-      - DJANGO_SECRET=${DJANGO_SECRET}
       - DB_HOST=db
-      - DB_NAME=${DB_NAME}
-      - DB_USER=${DB_USER}
-      - DB_PASSWORD=${DB_PASSWORD}
+    env_file: .env
+    container_name: ${CONTAINER_NAME}
     command: >
-      sh -c "python src/manage.py wait_for_db &&
-      python src/manage.py migrate &&
-      python src/manage.py runserver 0.0.0.0:8000"
+      sh -c "python manage.py wait_for_db &&
+      python manage.py migrate &&
+      uwsgi --ini docker/uwsgi.ini"
     depends_on:
       - db
 

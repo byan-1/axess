@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import re_path
 from axess.web.frontend.home_view import HomeView
+from django.views.generic import TemplateView
 
 urlpatterns = [
     re_path(r"^admin/", admin.site.urls),
     re_path(r"^$", HomeView.as_view(), name="home"),
+    re_path(r"^webpack/", TemplateView.as_view(template_name="react-base.html")),
 ]

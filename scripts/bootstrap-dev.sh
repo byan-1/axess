@@ -4,3 +4,4 @@ eval "$(pyenv init -)"
 pyenv global $pyversion
 apt-get install python3-dotenv-cli
 python3 -m venv .venv
+npm install

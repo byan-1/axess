@@ -3,3 +3,4 @@
 __pycache__/
 bootstrap-*/
 dist/
+node_modules/

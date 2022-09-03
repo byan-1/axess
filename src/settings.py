@@ -22,7 +22,7 @@ BASE_DIR = os.path.join(os.path.dirname(__file__), "..")
 SECRET_KEY = os.environ.get("DJANGO_SECRET")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEV") == "true"
 
 ALLOWED_HOSTS = []
 
